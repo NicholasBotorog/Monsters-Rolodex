@@ -1,8 +1,8 @@
 import { Component } from 'react';
 
-import logo from './logo.svg';
 import './App.css';
-
+import CardList from './components/card-list.component';
+import SearchBox from './components/search-box.component';
 
 
 class App extends Component {
@@ -22,7 +22,8 @@ class App extends Component {
         return {monsters: users}
       }, () => { 
         console.log(this.state)
-      }))
+      })
+      )
   }
 
   onSearchChange = (event)=>{
@@ -44,13 +45,8 @@ class App extends Component {
 
     return (
       <div className="App">
-
-        <input className='searchBox' type='search' placeholder='Search Monsters...'  onChange={onSearchChange}/>
-
-        {filteredMonsters.map(monster => { 
-            return ( 
-            <h1 key={monster.id}>{monster.name}</h1>
-            )})}
+        <SearchBox onChangeHandler={onSearchChange} placeholder='Search Monsters...' className='searchBox'/>
+        <CardList monsters={filteredMonsters}/>
       </div>
     );
   }
