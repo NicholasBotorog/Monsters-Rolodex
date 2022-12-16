@@ -5,9 +5,7 @@ import CardContainer from '../components/card-container.component'
 class CardList extends Component { 
 
   render() {
-
     const { monsters } = this.props
-
     return(
       <CardContainer monsters={monsters}/>
     )
