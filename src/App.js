@@ -20,10 +20,7 @@ class App extends Component {
       .then(response => response.json())
       .then((users) => this.setState(() => { 
         return {monsters: users}
-      }, () => { 
-        console.log(this.state)
-      })
-      )
+      }))
   }
 
   onSearchChange = (event)=>{
